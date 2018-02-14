@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <section class="content">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <input type="text" style="height: 30px;width:350px;" class="pull-left" ng-model="nameFilter" placeholder="Search..." />
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table class="table table-filter">
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">Drivers Championship Standings</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="driver in driversList | filter: searchFilter">
+                                        <td>{{$index + 1}}</td>
+                                        <td>
+                                            <div class="ckbox" style="padding-top:15px;">
+                                                <img src="img/flags/{{driver.Driver.nationality}}.png" class="media-photo">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <driver-info driver="driver" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

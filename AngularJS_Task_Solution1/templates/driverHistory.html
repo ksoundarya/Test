@@ -1,0 +1,31 @@
+<table class="table table-filter">
+    <thead>
+        <tr>
+            <th colspan="4" class="text-success">Formula 1 2013 Results</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Round</td>
+            <td>Grand Prix</td>
+            <td>Team</td>
+            <td>Grid</td>
+            <td>Race</td>
+        </tr>
+        <tr ng-repeat="race in races">
+            <td>{{race.round}}</td>
+            <td>
+                <div class="ckbox" style="padding-top:15px;">
+                    <img src="../img/flags/{{race.Circuit.Location.country}}.png" class="media-photo"> {{race.raceName}}
+                </div>
+            </td>
+            <td>
+                <div class="media">
+                    {{race.Results[0].Constructor.name}}
+                </div>
+            </td>
+            <td>{{race.Results[0].grid}}</td>
+            <td>{{race.Results[0].position}}</td>
+        </tr>
+    </tbody>
+</table>
